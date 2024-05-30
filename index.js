@@ -10,7 +10,7 @@ const imapConfig = {
 };
 const { EmbedBuilder, WebhookClient } = require("discord.js");
 
-const modguardwebhook = new WebhookClient({
+const webhook = new WebhookClient({
   url: process.env.WEBHOOK_URL,
 });
 const fetchMail = () => {
@@ -261,7 +261,7 @@ const fetchMail = () => {
                     text: "For more details: https://www.cloudflarestatus.com",
                   },
                 };
-                modguardwebhook.send({
+                webhook.send({
                   content: `<@&${process.env.DISCORD_ROLE}>`, embeds: [embed],
                 });
               } else if (
@@ -321,7 +321,7 @@ const fetchMail = () => {
                     text: "For more details: https://www.cloudflarestatus.com",
                   },
                 };
-                modguardwebhook.send({
+                webhook.send({
                   content: `<@&${process.env.DISCORD_ROLE}>`, embeds: [embed],
                 });
               }
